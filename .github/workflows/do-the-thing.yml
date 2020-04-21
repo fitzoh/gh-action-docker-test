@@ -1,0 +1,18 @@
+name: Do the thing
+
+on:
+  push:
+    branches: [ '*' ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: do the thing
+      uses: docker://docker.pkg.github.com/fitzoh/gh-action-docker-test/test-image:latest
+      run: cat /did-this-work
